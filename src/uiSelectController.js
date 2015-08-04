@@ -94,6 +94,10 @@ uis.controller('uiSelectCtrl',
         ctrl.searchInput[0].focus();
       });
     }
+    else if (ctrl.open && !ctrl.searchEnabled) {
+      // Close the selection if we don't have search enabled, and we click on the select again
+      ctrl.close();
+    }
   };
 
   ctrl.findGroupByName = function(name) {
